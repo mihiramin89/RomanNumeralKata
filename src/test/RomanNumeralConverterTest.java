@@ -70,6 +70,11 @@ public class RomanNumeralConverterTest {
 		assertEquals(500,converter.toNumber("D"));
 	}
 	
+	@Test
+	public void ItConvertRomanNumeralM() {
+		assertEquals(1000,converter.toNumber("M"));
+	}
+	
 	
 	
 
