@@ -105,4 +105,9 @@ public class RomanNumeralConverterTest {
 	public void ItFailsToConvertRomanNumeralMMMM() {
 		assertEquals(-1,converter.toNumber("MMMM"));
 	}
+	
+	@Test
+	public void ItConvertRomanNumeralMMM() {
+		assertEquals(3000,converter.toNumber("MMM"));
+	}
 }
