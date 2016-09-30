@@ -76,8 +76,13 @@ public class RomanNumeralConverter {
 			
 			//case to handle IV, IX, ...
 			if(prevVal < currentVal && prevVal != 0) {
-				currentVal = currentVal-prevVal;
-				result = result - prevVal;
+				if(prevVal == 5) {
+					result = -1;
+					break;
+				} else {
+					currentVal = currentVal-prevVal;
+					result = result - prevVal;
+				}
 			} else if(consecutiveICounter == 3 || consecutiveXCounter == 3 || consecutiveCCounter == 3 || consecutiveMCounter == 3) {
 				result = -1;
 				break;

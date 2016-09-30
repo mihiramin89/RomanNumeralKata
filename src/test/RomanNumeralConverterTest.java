@@ -140,4 +140,9 @@ public class RomanNumeralConverterTest {
 	public void ItFailsToConvertRomanNumeralWithMultipleDs() {
 		assertEquals(-1,converter.toNumber("DCD"));
 	}
+	
+	@Test
+	public void ItFailsToConvertRomanNumeralThatSubjtractsV() {
+		assertEquals(-1, converter.toNumber("VX"));
+	}
 }
