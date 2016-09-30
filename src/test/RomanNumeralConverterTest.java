@@ -79,4 +79,9 @@ public class RomanNumeralConverterTest {
 	public void ItFailsToConvertRomanNumeralIIII() {
 		assertEquals(-1,converter.toNumber("IIII"));
 	}
+	
+	@Test
+	public void ItFailsToConvertRomanNumeralXXXX() {
+		assertEquals(-1,converter.toNumber("XXXX"));
+	}
 }

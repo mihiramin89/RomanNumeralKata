@@ -32,6 +32,7 @@ public class RomanNumeralConverter {
 		int currentVal = 0;
 		int prevVal = 0;
 		int consecutiveICounter = 0;
+		int consecutiveXCounter = 0;
 	
 		
 		for(int i = 0; i < roman.length(); i++) {
@@ -40,16 +41,19 @@ public class RomanNumeralConverter {
 				currentVal+=numList.get(symList.indexOf(roman.charAt(i)));
 				if(prevVal == 1 && prevVal == currentVal) { 
 					consecutiveICounter++;
-				}else
-				{
+				} else if (prevVal == 10 && prevVal == currentVal) {
+					consecutiveXCounter++;
+				}
+				else {
 					consecutiveICounter = 0;
+					consecutiveXCounter = 0;
 				}
 			}
 			//case to handle IV, IX, ...
 			if(prevVal < currentVal && prevVal != 0) {
 				currentVal = currentVal-prevVal;
 				result = result - prevVal;
-			}else if(consecutiveICounter == 3) {
+			}else if(consecutiveICounter == 3 || consecutiveXCounter == 3) {
 				result = -1;
 				break;
 			}
