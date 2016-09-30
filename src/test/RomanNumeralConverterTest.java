@@ -150,4 +150,9 @@ public class RomanNumeralConverterTest {
 	public void ItFailsToConvertRomanNumeralThatSubtractsL() {
 		assertEquals(-1, converter.toNumber("LC"));
 	}
+	
+	@Test
+	public void ItFailsToConvertRomanNumeralThatSubtractsD() {
+		assertEquals(-1, converter.toNumber("DM"));
+	}
 }

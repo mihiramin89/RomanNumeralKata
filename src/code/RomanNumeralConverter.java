@@ -76,7 +76,7 @@ public class RomanNumeralConverter {
 			
 			//case to handle IV, IX, ...
 			if(prevVal < currentVal && prevVal != 0) {
-				if(prevVal == 5 || prevVal == 50) {
+				if(prevVal == 5 || prevVal == 50 || prevVal == 500) {
 					result = -1;
 					break;
 				} else {
