@@ -50,6 +50,11 @@ public class RomanNumeralConverterTest {
 		assertEquals(10,converter.toNumber("X"));
 	}
 	
+	@Test
+	public void ItConvertRomanNumberalXL() {
+		assertEquals(40,converter.toNumber("XL"));
+	}
+	
 	
 	
 
