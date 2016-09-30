@@ -36,6 +36,7 @@ public class RomanNumeralConverter {
 		int consecutiveCCounter = 0;
 		int consecutiveMCounter = 0;
 		int repetitionVCounter = 0;
+		int repetitionLCounter = 0;
 	
 		
 		for(int i = 0; i < roman.length(); i++) {
@@ -46,6 +47,9 @@ public class RomanNumeralConverter {
 						consecutiveICounter++;
 					} else if (prevVal == 10) {
 						consecutiveXCounter++;
+					} else if (prevVal == 50) {
+						result = -1;
+						break;
 					} else if (prevVal == 100) {
 						consecutiveCCounter++;
 					} else if (prevVal == 1000) {

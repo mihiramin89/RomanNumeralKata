@@ -120,4 +120,9 @@ public class RomanNumeralConverterTest {
 	public void ItFailsToConvertRomanNumeralWithMultipleVs(){
 		assertEquals(-1,converter.toNumber("XIVIV"));
 	}
+	
+	@Test
+	public void ItFailsToConvertRomanNumeralWithConsecutiveLs(){
+		assertEquals(-1,converter.toNumber("LL"));
+	}
 }
