@@ -31,17 +31,27 @@ public class RomanNumeralConverter {
 		int result = 0;
 		int currentVal = 0;
 		int prevVal = 0;
+		int consecutiveICounter = 0;
 	
 		
 		for(int i = 0; i < roman.length(); i++) {
 			
 			if(symList.indexOf(roman.charAt(i)) > -1) {
 				currentVal+=numList.get(symList.indexOf(roman.charAt(i)));
+				if(prevVal == 1 && prevVal == currentVal) { 
+					consecutiveICounter++;
+				}else
+				{
+					consecutiveICounter = 0;
+				}
 			}
 			//case to handle IV, IX, ...
 			if(prevVal < currentVal && prevVal != 0) {
 				currentVal = currentVal-prevVal;
 				result = result - prevVal;
+			}else if(consecutiveICounter == 3) {
+				result = -1;
+				break;
 			}
 			
 			result += currentVal;

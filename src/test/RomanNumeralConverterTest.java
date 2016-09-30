@@ -74,4 +74,9 @@ public class RomanNumeralConverterTest {
 	public void ItConvertRomanNumeralM() {
 		assertEquals(1000,converter.toNumber("M"));
 	}
+	
+	@Test
+	public void ItFailsToConvertRomanNumeralIIII() {
+		assertEquals(-1,converter.toNumber("IIII"));
+	}
 }
