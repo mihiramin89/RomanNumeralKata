@@ -3,18 +3,18 @@ package code;
 import java.util.ArrayList;
 
 public class RomanNumeralConverter {
-	private  ArrayList<String> symList;
+	private  ArrayList<Character> symList;
 	private ArrayList<Integer> numList;
 	
 	public RomanNumeralConverter() {
-		symList = new ArrayList<String>();
-		symList.add("I");
-		symList.add("V");
-		symList.add("X");
-		symList.add("L");
-		symList.add("C");
-		symList.add("D");
-		symList.add("M");
+		symList = new ArrayList<Character>();
+		symList.add('I');
+		symList.add('V');
+		symList.add('X');
+		symList.add('L');
+		symList.add('C');
+		symList.add('D');
+		symList.add('M');
 		
 		numList = new ArrayList<Integer>();
 		numList.add(1);
@@ -34,32 +34,9 @@ public class RomanNumeralConverter {
 	
 		
 		for(int i = 0; i < roman.length(); i++) {
-//			
-//			if(symList.indexOf(roman.substring(i, i)) > 0) {
-//				currentVal+=numList.get(symList.indexOf(roman.substring(i, i)));
-//			}
-			if(roman.charAt(i) == 'M') {
-				currentVal+=1000;
-			}
-			if(roman.charAt(i) == 'D') {
-				currentVal+=500;
-			}
-			if(roman.charAt(i) == 'C') {
-				currentVal+=100;
-			}
-			if(roman.charAt(i) == 'L') {
-				currentVal+=50;
-			}
-			if(roman.charAt(i) == 'X') {
-				currentVal+=10;
-			}
-			if(roman.charAt(i) == 'V')
-			{
-				currentVal+=5;
-			}
-			if(roman.charAt(i) =='I')
-			{
-				currentVal++;
+			
+			if(symList.indexOf(roman.charAt(i)) > -1) {
+				currentVal+=numList.get(symList.indexOf(roman.charAt(i)));
 			}
 			//case to handle IV, IX, ...
 			if(prevVal < currentVal && prevVal != 0) {
