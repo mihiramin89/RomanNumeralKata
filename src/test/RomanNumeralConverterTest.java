@@ -40,5 +40,10 @@ public class RomanNumeralConverterTest {
 		assertEquals(5,converter.toNumber("V"));
 	}
 	
+	@Test public void ItConvertRomanNumberalIX() {
+		assertEquals(9,converter.toNumber("IX"));
+	}
+	
+	
 
 }

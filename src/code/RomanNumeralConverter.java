@@ -10,6 +10,9 @@ public class RomanNumeralConverter {
 		
 		for(int i = 0; i < roman.length(); i++) {
 			
+			if(roman.charAt(i) == 'X') {
+				currentVal+=10;
+			}
 			if(roman.charAt(i) == 'V')
 			{
 				currentVal+=5;
