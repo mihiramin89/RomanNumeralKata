@@ -35,5 +35,10 @@ public class RomanNumeralConverterTest {
 		assertEquals(4,converter.toNumber("IV"));
 	}
 	
+	@Test
+	public void ItConvertRomanNumeralV() {
+		assertEquals(5,converter.toNumber("V"));
+	}
+	
 
 }
