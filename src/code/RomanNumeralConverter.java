@@ -45,6 +45,9 @@ public class RomanNumeralConverter {
 				if(prevVal == currentVal) {
 					if(prevVal == 1 ) { 
 						consecutiveICounter++;
+					} else if(prevVal == 500) {  
+						result = -1;
+						break;
 					} else if (prevVal == 10) {
 						consecutiveXCounter++;
 					} else if (prevVal == 100) {
