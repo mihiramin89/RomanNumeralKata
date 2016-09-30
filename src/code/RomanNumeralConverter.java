@@ -33,6 +33,7 @@ public class RomanNumeralConverter {
 		int prevVal = 0;
 		int consecutiveICounter = 0;
 		int consecutiveXCounter = 0;
+		int consecutiveCCounter = 0;
 	
 		
 		for(int i = 0; i < roman.length(); i++) {
@@ -43,17 +44,20 @@ public class RomanNumeralConverter {
 					consecutiveICounter++;
 				} else if (prevVal == 10 && prevVal == currentVal) {
 					consecutiveXCounter++;
+				} else if (prevVal == 100 && prevVal == currentVal) {
+					consecutiveCCounter++;
 				}
 				else {
 					consecutiveICounter = 0;
 					consecutiveXCounter = 0;
+					consecutiveCCounter = 0;
 				}
 			}
 			//case to handle IV, IX, ...
 			if(prevVal < currentVal && prevVal != 0) {
 				currentVal = currentVal-prevVal;
 				result = result - prevVal;
-			}else if(consecutiveICounter == 3 || consecutiveXCounter == 3) {
+			}else if(consecutiveICounter == 3 || consecutiveXCounter == 3 || consecutiveCCounter == 3) {
 				result = -1;
 				break;
 			}

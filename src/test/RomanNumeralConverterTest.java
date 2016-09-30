@@ -84,4 +84,9 @@ public class RomanNumeralConverterTest {
 	public void ItFailsToConvertRomanNumeralXXXX() {
 		assertEquals(-1,converter.toNumber("XXXX"));
 	}
+	
+	@Test
+	public void ItFailsToConvertRomanNumeralCCCC() {
+		assertEquals(-1,converter.toNumber("CCCC"));
+	}
 }
