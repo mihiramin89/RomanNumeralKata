@@ -47,9 +47,6 @@ public class RomanNumeralConverter {
 						consecutiveICounter++;
 					} else if (prevVal == 10) {
 						consecutiveXCounter++;
-					} else if (prevVal == 50) {
-						result = -1;
-						break;
 					} else if (prevVal == 100) {
 						consecutiveCCounter++;
 					} else if (prevVal == 1000) {
@@ -63,10 +60,12 @@ public class RomanNumeralConverter {
 				}	
 				if(currentVal == 5) {
 					repetitionVCounter++;
+				} else if(currentVal == 50){
+					repetitionLCounter++;
 				}
 			}
 			
-			if(repetitionVCounter > 1) {
+			if(repetitionVCounter > 1 || repetitionLCounter > 1) {
 				result = -1;
 				break;
 			}
