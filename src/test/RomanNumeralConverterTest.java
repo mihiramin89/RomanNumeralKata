@@ -17,17 +17,23 @@ public class RomanNumeralConverterTest {
 
 	@Test
 	public void ItConvertRomanNumeralI() {
-		assertEquals(1,converter.toRoman("I"));
+		assertEquals(1,converter.toNumber("I"));
 	}
 	
 	@Test
 	public void ItConvertRomanNumeralII() {
-		assertEquals(2,converter.toRoman("II"));
+		assertEquals(2,converter.toNumber("II"));
 	}
 	
 	@Test
 	public void ItConvertRomanNumeralIII() {
-		assertEquals(3,converter.toRoman("III"));
+		assertEquals(3,converter.toNumber("III"));
 	}
+	
+	@Test
+	public void ItConvertRomanNumeralIV() {
+		assertEquals(4,converter.toNumber("IV"));
+	}
+	
 
 }
