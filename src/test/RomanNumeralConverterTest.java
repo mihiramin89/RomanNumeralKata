@@ -19,5 +19,10 @@ public class RomanNumeralConverterTest {
 	public void ItConvertRomanNumeralI() {
 		assertEquals(1,converter.toRoman("I"));
 	}
+	
+	@Test
+	public void ItConvertRomanNumeralII() {
+		assertEquals(2,converter.toRoman("II"));
+	}
 
 }
