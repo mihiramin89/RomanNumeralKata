@@ -135,4 +135,9 @@ public class RomanNumeralConverterTest {
 	public void ItFailsToConvertRomanNumeralWithConsecutiveDs(){
 		assertEquals(-1,converter.toNumber("DD"));
 	}
+	
+	@Test
+	public void ItFailsToConvertRomanNumeralWithMultipleDs() {
+		assertEquals(-1,converter.toNumber("DCD"));
+	}
 }

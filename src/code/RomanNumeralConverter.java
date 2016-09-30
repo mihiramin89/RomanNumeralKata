@@ -31,13 +31,15 @@ public class RomanNumeralConverter {
 		int result = 0;
 		int currentVal = 0;
 		int prevVal = 0;
+		
 		int consecutiveICounter = 0;
 		int consecutiveXCounter = 0;
 		int consecutiveCCounter = 0;
 		int consecutiveMCounter = 0;
+		
 		int repetitionVCounter = 0;
 		int repetitionLCounter = 0;
-	
+		int repetitionDCounter = 0;	
 		
 		for(int i = 0; i < roman.length(); i++) {
 			if(symList.indexOf(roman.charAt(i)) > -1) {
@@ -45,9 +47,6 @@ public class RomanNumeralConverter {
 				if(prevVal == currentVal) {
 					if(prevVal == 1 ) { 
 						consecutiveICounter++;
-					} else if(prevVal == 500) {  
-						result = -1;
-						break;
 					} else if (prevVal == 10) {
 						consecutiveXCounter++;
 					} else if (prevVal == 100) {
@@ -65,10 +64,12 @@ public class RomanNumeralConverter {
 					repetitionVCounter++;
 				} else if(currentVal == 50){
 					repetitionLCounter++;
+				} else if(currentVal == 500) {
+					repetitionDCounter++;
 				}
 			}
 			
-			if(repetitionVCounter > 1 || repetitionLCounter > 1) {
+			if(repetitionVCounter > 1 || repetitionLCounter > 1 || repetitionDCounter > 1) {
 				result = -1;
 				break;
 			}
