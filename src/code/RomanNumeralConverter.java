@@ -38,12 +38,14 @@ public class RomanNumeralConverter {
 	
 		
 		for(int i = 0; i < roman.length(); i++) {
-			
 			if(symList.indexOf(roman.charAt(i)) > -1) {
 				currentVal+=numList.get(symList.indexOf(roman.charAt(i)));
 				if(prevVal == currentVal) {
 					if(prevVal == 1 ) { 
 						consecutiveICounter++;
+					} else if (prevVal == 5) {
+						result = -1;
+						break;
 					} else if (prevVal == 10) {
 						consecutiveXCounter++;
 					} else if (prevVal == 100) {
@@ -56,8 +58,7 @@ public class RomanNumeralConverter {
 						consecutiveCCounter = 0;
 						consecutiveMCounter = 0;
 					}	
-				}
-				
+				}	
 			}
 			//case to handle IV, IX, ...
 			if(prevVal < currentVal && prevVal != 0) {

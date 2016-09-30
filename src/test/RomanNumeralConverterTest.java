@@ -110,4 +110,9 @@ public class RomanNumeralConverterTest {
 	public void ItConvertRomanNumeralMMM() {
 		assertEquals(3000,converter.toNumber("MMM"));
 	}
+	
+	@Test
+	public void ItFailsToConvertRomanNumeralWithConsecutiveVs(){
+		assertEquals(-1,converter.toNumber("VV"));
+	}
 }
