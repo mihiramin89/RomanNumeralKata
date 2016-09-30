@@ -80,13 +80,29 @@ public class RomanNumeralConverterTest {
 		assertEquals(-1,converter.toNumber("IIII"));
 	}
 	
+	
 	@Test
 	public void ItFailsToConvertRomanNumeralXXXX() {
 		assertEquals(-1,converter.toNumber("XXXX"));
 	}
 	
 	@Test
+	public void ItConvertRomanNumeralXXX() {
+		assertEquals(30,converter.toNumber("XXX"));
+	}
+	
+	@Test
 	public void ItFailsToConvertRomanNumeralCCCC() {
 		assertEquals(-1,converter.toNumber("CCCC"));
+	}
+	
+	@Test
+	public void ItConvertRomanNumeralCCC() {
+		assertEquals(300,converter.toNumber("CCC"));
+	}
+	
+	@Test
+	public void ItFailsToConvertRomanNumeralMMMM() {
+		assertEquals(-1,converter.toNumber("MMMM"));
 	}
 }
