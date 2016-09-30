@@ -41,21 +41,23 @@ public class RomanNumeralConverter {
 			
 			if(symList.indexOf(roman.charAt(i)) > -1) {
 				currentVal+=numList.get(symList.indexOf(roman.charAt(i)));
-				if(prevVal == 1 && prevVal == currentVal) { 
-					consecutiveICounter++;
-				} else if (prevVal == 10 && prevVal == currentVal) {
-					consecutiveXCounter++;
-				} else if (prevVal == 100 && prevVal == currentVal) {
-					consecutiveCCounter++;
-				} else if (prevVal == 1000 && prevVal == currentVal) {
-					consecutiveMCounter++;
+				if(prevVal == currentVal) {
+					if(prevVal == 1 ) { 
+						consecutiveICounter++;
+					} else if (prevVal == 10) {
+						consecutiveXCounter++;
+					} else if (prevVal == 100) {
+						consecutiveCCounter++;
+					} else if (prevVal == 1000) {
+						consecutiveMCounter++;
+					} else {
+						consecutiveICounter = 0;
+						consecutiveXCounter = 0;
+						consecutiveCCounter = 0;
+						consecutiveMCounter = 0;
+					}	
 				}
-				else {
-					consecutiveICounter = 0;
-					consecutiveXCounter = 0;
-					consecutiveCCounter = 0;
-					consecutiveMCounter = 0;
-				}
+				
 			}
 			//case to handle IV, IX, ...
 			if(prevVal < currentVal && prevVal != 0) {
