@@ -82,6 +82,9 @@ public class RomanNumeralConverter {
 				} else if(prevVal == 1 && currentVal > 10) {
 					result = -1;
 					break;
+				} else if(prevVal == 10 && currentVal > 100) {
+					result = -1;
+					break;
 				} else {
 					currentVal = currentVal-prevVal;
 					result = result - prevVal;

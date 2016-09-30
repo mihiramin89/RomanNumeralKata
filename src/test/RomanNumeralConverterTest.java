@@ -168,5 +168,10 @@ public class RomanNumeralConverterTest {
 	public void ItFailsToConvertSubtractingOneFromRomanNumeralIC() {
 		assertEquals(-1,converter.toNumber("IC"));
 	}
+	
+	@Test
+	public void ItFailsToConvertSubtractingTenFromRomanNumeralXD() {
+		assertEquals(-1,converter.toNumber("XD"));
+	}
 
 }
