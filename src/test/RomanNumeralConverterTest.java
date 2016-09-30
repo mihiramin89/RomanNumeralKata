@@ -115,4 +115,9 @@ public class RomanNumeralConverterTest {
 	public void ItFailsToConvertRomanNumeralWithConsecutiveVs(){
 		assertEquals(-1,converter.toNumber("VV"));
 	}
+	
+	@Test
+	public void ItFailsToConvertRomanNumeralWithMultipleVs(){
+		assertEquals(-1,converter.toNumber("XIVIV"));
+	}
 }
