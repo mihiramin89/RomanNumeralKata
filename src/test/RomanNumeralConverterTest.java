@@ -142,7 +142,12 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void ItFailsToConvertRomanNumeralThatSubjtractsV() {
+	public void ItFailsToConvertRomanNumeralThatSubtractsV() {
 		assertEquals(-1, converter.toNumber("VX"));
+	}
+	
+	@Test
+	public void ItFailsToConvertRomanNumeralThatSubtractsL() {
+		assertEquals(-1, converter.toNumber("LC"));
 	}
 }
