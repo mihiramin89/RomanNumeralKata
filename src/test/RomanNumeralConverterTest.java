@@ -155,4 +155,18 @@ public class RomanNumeralConverterTest {
 	public void ItFailsToConvertRomanNumeralThatSubtractsD() {
 		assertEquals(-1, converter.toNumber("DM"));
 	}
+	
+	@Test
+	public void ItConvertsRomanNumeralMCMLXXXIX() {
+		assertEquals(1989,converter.toNumber("MCMLXXXIX"));
+	}
+	
+	
+	//TODO: The '1' symbols ('I', 'X', and 'C') can only be subtracted from the 2 next highest values ('IV' and 'IX', 'XL' and 'XC', 'CD' and 'CM'). 
+	//       Only one subtraction can be made per numeral ('XC' is allowed, 'XXC' is not). 
+	@Test
+	public void ItFailsToConvertSubtractingOneFromRomanNumeralIC() {
+		assertEquals(-1,converter.toNumber("IC"));
+	}
+
 }
